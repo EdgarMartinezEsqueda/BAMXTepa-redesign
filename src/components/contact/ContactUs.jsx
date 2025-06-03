@@ -1,4 +1,5 @@
 import { FaHome, FaPhone, FaEnvelope, FaUser, FaEdit } from "react-icons/fa";
+import { IoShareSocial } from "react-icons/io5";
 
 const ContactPage = () => {
   return (
@@ -20,10 +21,15 @@ const ContactPage = () => {
             {
               icon: <FaEnvelope />,
               title: "Correos Electrónicos",
-              content: "direcciongeneral@batepa.mx<br />trabajosocial@batepa.mx"
+              content: "<a href='mailto:direcciongeneral@batepa.mx'>direcciongeneral@batepa.mx</a><br /><a href='mailto:trabajosocial@batepa.mx'>trabajosocial@batepa.mx</a>"
+            },
+            {
+              icon: <IoShareSocial />,
+              title: "Enlaces útiles",
+              content: "Aquí encontrarás más de nosotros<br /> <a href='https://linktr.ee/bamxtepatitlan' target='_blank'>linktr.ee/bamxtepatitlan</a>"
             }
           ].map((item, index) => (
-            <div key={index} className="w-full lg:w-1/3 md:w-1/2 px-2.5 mb-8 sm:px-0 sm:w-full flex">
+            <div key={index} className="w-full lg:w-1/4 md:w-1/2 px-2.5 mb-8 sm:px-0 sm:w-full flex">
               <div className="group relative p-10 rounded-lg border border-white shadow-[0px_15px_10px_0px_rgba(194,185,185,0.18)] transition-all flex flex-col justify-between h-full w-full hover:bg-verdeLogo">
                 
                 <div className="w-20 h-20 mx-auto flex items-center justify-center">
