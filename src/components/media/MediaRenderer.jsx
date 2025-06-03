@@ -22,13 +22,15 @@ const MediaRenderer = ({ media, alt, title }) => {
             className="w-full h-full"
             src={media.src}
             title={title}
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           />
           <div className="absolute inset-0 flex items-center justify-center">
-            <div className="bg-white w-16 h-16 rounded-full flex items-center justify-center text-rojoLogo shadow-lg">
-              <FaPlay className="text-xl" />
-            </div>
+            <a 
+              href={media.src} target="_blank"
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 md:w-20 md:h-20 bg-primary rounded-full flex items-center justify-center hover:bg-amarilloLogo transition-colors shadow-lg"
+            >
+              <FaPlay className="text-white text-2xl md:text-3xl ml-1" />
+            </a>
           </div>
         </div>
       );
