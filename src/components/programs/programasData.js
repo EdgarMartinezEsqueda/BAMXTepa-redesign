@@ -45,7 +45,7 @@ export const programas = [
     id: "apadrinamiento",
     iconName: "FaGift",
     title: "Apadrina una Familia",
-    description: "Con solo $400 al mes, apoyas a una familia en situación de vulnerabilidad en nuestra región. Puedes unirte con un propio caso o dejar que nosotros te asignemos uno. Juntos generamos vínculos de ayuda con impacto real.",
+    description: "Con solo $400 al mes, apoyas a una familia en situación de vulnerabilidad en nuestra región. Puedes unirte con un propio caso o dejar que nosotros te asignemos uno. Juntos generamos vínculos de ayuda con impacto real. A continuación te mostramos el caso de una beneficiaria en busca de apoyo.",
     keyPoints: [
       "Reportes mensuales del impacto de tu apoyo",
       "Posibilidad de conocer a la familia apadrinada",
@@ -54,7 +54,7 @@ export const programas = [
     ],
     media: {
       type: "video",
-      src: "https://www.youtube.com/embed/VqmFKnHG5q8?si=YcvnY_zzMv21k4iM", 
+      src: "https://drive.google.com/file/d/1GWNZpifm8MGXGHMksc54z7yLb2eW2pYr/preview", 
       alt: "Testimonio de una familia apadrinada"
     },
     faqs: [
