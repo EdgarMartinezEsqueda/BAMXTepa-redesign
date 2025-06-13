@@ -1,7 +1,33 @@
+import emailjs from "@emailjs/browser";
+import { useRef } from "react";
 import { FaHome, FaPhone, FaEnvelope, FaUser, FaEdit } from "react-icons/fa";
 import { IoShareSocial } from "react-icons/io5";
 
 const ContactPage = () => {
+  const formRef = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        import.meta.env.VITE_SERVICE_ID,
+        import.meta.env.VITE_TEMPLATE_ID,
+        formRef.current,
+        import.meta.env.VITE_PUBLIC_KEY,
+      )
+      .then(
+        () => {
+          alert("Mensaje enviado con éxito. Te atenderemos a la brevedad.");
+          formRef.current.reset();
+        },
+        (error) => {
+          alert("Hubo un error. Inténtalo más tarde.");
+          console.log(error);
+        }
+      );
+  };
+
   return (
     <section className="py-20">
       <div className="container mx-auto px-4">
@@ -77,10 +103,11 @@ const ContactPage = () => {
                 </p>
               </div>
 
-              <form className="contact-form">
+              <form ref={formRef} onSubmit={sendEmail} className="contact-form">
                 <div className="relative mb-10">
                   <input
                     type="text"
+                    name="nombre"
                     placeholder="Tu nombre*"
                     className="w-full pb-5 pl-10 text-gray-500 text-lg border-b border-gray-300 focus:outline-none"
                     required
@@ -93,6 +120,7 @@ const ContactPage = () => {
                 <div className="relative mb-10">
                   <input
                     type="email"
+                    name="correo"
                     placeholder="Correo electrónico*"
                     className="w-full pb-5 pl-10 text-gray-500 text-lg border-b border-gray-300 focus:outline-none"
                     required
@@ -104,6 +132,7 @@ const ContactPage = () => {
 
                 <div className="relative mb-10">
                   <textarea
+                    name="mensaje"
                     placeholder="Escribe tu mensaje aquí"
                     className="w-full h-32 pb-5 pl-10 text-gray-500 text-lg border-b border-gray-300 focus:outline-none"
                     required
